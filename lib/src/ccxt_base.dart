@@ -329,10 +329,10 @@ String ohlcvToJson(List<double> data) {
 //     return Exchange.fromJson(jsonData);
 // }
 
-String exchangeToJson(Exchange data) {
-    final dyn = data.toJson();
-    return json.encode(dyn);
-}
+// String exchangeToJson(Exchange data) {
+//     final dyn = data.toJson();
+//     return json.encode(dyn);
+// }
 
 // The1Btcxe the1BtcxeFromJson(String str) {
 //     final jsonData = json.decode(str);
@@ -1244,65 +1244,64 @@ abstract class Exchange {
         this.verbose,
     });
 
-    // factory Exchange.fromJson(Map<String, dynamic> json) => new Exchange(
-    //     aggregate: json["aggregate"],
-    //     balance: json["balance"] == null ? null : new Map.from(json["balance"]).map((k, v) => new MapEntry<String, dynamic>(k, v)),
-    //     base64ToBinary: json["base64ToBinary"],
-    //     base64ToString: json["base64ToString"],
-    //     binaryConcat: json["binaryConcat"],
-    //     binaryToString: json["binaryToString"],
-    //     capitalize: json["capitalize"],
-    //     countries: json["countries"] == null ? null : json["countries"],
-    //     currencies: json["currencies"] == null ? null : new Map.from(json["currencies"]).map((k, v) => new MapEntry<String, Currency>(k, Currency.fromJson(v))),
-    //     decimal: json["decimal"],
-    //     deepExtend: json["deepExtend"],
-    //     enableRateLimit: json["enableRateLimit"] == null ? null : json["enableRateLimit"],
-    //     extend: json["extend"],
-    //     fees: json["fees"] == null ? null : new Map.from(json["fees"]).map((k, v) => new MapEntry<String, dynamic>(k, v)),
-    //     flatten: json["flatten"],
-    //     groupBy: json["groupBy"],
-    //     has: json["has"] == null ? null : new Map.from(json["has"]).map((k, v) => new MapEntry<String, dynamic>(k, v)),
-    //     hash: json["hash"],
-    //     hmac: json["hmac"],
-    //     id: json["id"] == null ? null : json["id"],
-    //     ids: json["ids"] == null ? null : new List<String>.from(json["ids"].map((x) => x)),
-    //     indexBy: json["indexBy"],
-    //     json: json["json"] == null ? null : new Map.from(json["json"]).map((k, v) => new MapEntry<String, dynamic>(k, v)),
-    //     jwt: json["jwt"],
-    //     keysort: json["keysort"],
-    //     markets: json["markets"] == null ? null : new Map.from(json["markets"]).map((k, v) => new MapEntry<String, Market>(k, Market.fromJson(v))),
-    //     marketsById: json["marketsById"] == null ? null : new Map.from(json["marketsById"]).map((k, v) => new MapEntry<String, Market>(k, Market.fromJson(v))),
-    //     milliseconds: json["milliseconds"] == null ? null : new Map.from(json["milliseconds"]).map((k, v) => new MapEntry<String, dynamic>(k, v)),
-    //     name: json["name"] == null ? null : json["name"],
-    //     orderbooks: json["orderbooks"] == null ? null : new Map.from(json["orderbooks"]).map((k, v) => new MapEntry<String, dynamic>(k, v)),
-    //     ordered: json["ordered"],
-    //     orders: json["orders"] == null ? null : new Map.from(json["orders"]).map((k, v) => new MapEntry<String, dynamic>(k, v)),
-    //     parse8601: json["parse8601"] == null ? null : new Map.from(json["parse8601"]).map((k, v) => new MapEntry<String, dynamic>(k, v)),
-    //     pluck: json["pluck"],
-    //     proxy: json["proxy"] == null ? null : json["proxy"],
-    //     rateLimit: json["rateLimit"] == null ? null : json["rateLimit"].toDouble(),
-    //     safeFloat: json["safeFloat"],
-    //     safeInteger: json["safeInteger"],
-    //     safeString: json["safeString"],
-    //     safeValue: json["safeValue"],
-    //     sortBy: json["sortBy"],
-    //     stringToBase64: json["stringToBase64"],
-    //     stringToBinary: json["stringToBinary"],
-    //     substituteCommonCurrencyCodes: json["substituteCommonCurrencyCodes"] == null ? null : json["substituteCommonCurrencyCodes"],
-    //     sum: json["sum"],
-    //     symbols: json["symbols"] == null ? null : new List<String>.from(json["symbols"].map((x) => x)),
-    //     timeframes: json["timeframes"],
-    //     timeout: json["timeout"] == null ? null : json["timeout"].toDouble(),
-    //     trades: json["trades"] == null ? null : new Map.from(json["trades"]).map((k, v) => new MapEntry<String, dynamic>(k, v)),
-    //     truncate: json["truncate"],
-    //     twofa: json["twofa"] == null ? null : json["twofa"],
-    //     unique: json["unique"],
-    //     urlencode: json["urlencode"],
-    //     userAgent: json["userAgent"],
-    //     utf16ToBase64: json["utf16ToBase64"],
-    //     verbose: json["verbose"] == null ? null : json["verbose"],
-    // );
-
+    Exchange.fromJson(Map<String, dynamic> json){
+        aggregate=json["aggregate"];
+        balance=json["balance"] == null ? null : new Map.from(json["balance"]).map((k, v) => new MapEntry<String, dynamic>(k, v));
+        base64ToBinary= json["base64ToBinary"];
+        base64ToString= json["base64ToString"];
+        binaryConcat= json["binaryConcat"];
+        binaryToString= json["binaryToString"];
+        capitalize= json["capitalize"];
+        countries= json["countries"] == null ? null : json["countries"];
+        currencies= json["currencies"] == null ? null : new Map.from(json["currencies"]).map((k, v) => new MapEntry<String, Currency>(k, Currency.fromJson(v)));
+        decimal= json["decimal"];
+        deepExtend= json["deepExtend"];
+        enableRateLimit= json["enableRateLimit"] == null ? null : json["enableRateLimit"];
+        extend= json["extend"];
+        fees= json["fees"] == null ? null : new Map.from(json["fees"]).map((k, v) => new MapEntry<String, dynamic>(k, v));
+        flatten= json["flatten"];
+        groupBy= json["groupBy"];
+        has= json["has"] == null ? null : new Map.from(json["has"]).map((k, v) => new MapEntry<String, dynamic>(k, v));
+        hash= json["hash"];
+        hmac= json["hmac"];
+        id= json["id"] == null ? null : json["id"];
+        ids= json["ids"] == null ? null : new List<String>.from(json["ids"].map((x) => x));
+        indexBy= json["indexBy"];
+        json= json["json"] == null ? null : new Map.from(json["json"]).map((k, v) => new MapEntry<String, dynamic>(k, v));
+        jwt= json["jwt"];
+        keysort= json["keysort"];
+        markets= json["markets"] == null ? null : new Map.from(json["markets"]).map((k, v) => new MapEntry<String, Market>(k, Market.fromJson(v)));
+        marketsById= json["marketsById"] == null ? null : new Map.from(json["marketsById"]).map((k, v) => new MapEntry<String, Market>(k, Market.fromJson(v)));
+        milliseconds= json["milliseconds"] == null ? null : new Map.from(json["milliseconds"]).map((k, v) => new MapEntry<String, dynamic>(k, v));
+        name= json["name"] == null ? null : json["name"];
+        orderbooks= json["orderbooks"] == null ? null : new Map.from(json["orderbooks"]).map((k, v) => new MapEntry<String, dynamic>(k, v));
+        ordered= json["ordered"];
+        orders= json["orders"] == null ? null : new Map.from(json["orders"]).map((k, v) => new MapEntry<String, dynamic>(k, v));
+        parse8601= json["parse8601"] == null ? null : new Map.from(json["parse8601"]).map((k, v) => new MapEntry<String, dynamic>(k, v));
+        pluck= json["pluck"];
+        proxy= json["proxy"] == null ? null : json["proxy"];
+        rateLimit= json["rateLimit"] == null ? null : json["rateLimit"].toDouble();
+        safeFloat= json["safeFloat"];
+        safeInteger= json["safeInteger"];
+        safeString= json["safeString"];
+        safeValue= json["safeValue"];
+        sortBy= json["sortBy"];
+        stringToBase64= json["stringToBase64"];
+        stringToBinary= json["stringToBinary"];
+        substituteCommonCurrencyCodes= json["substituteCommonCurrencyCodes"] == null ? null : json["substituteCommonCurrencyCodes"];
+        sum= json["sum"];
+        symbols= json["symbols"] == null ? null : new List<String>.from(json["symbols"].map((x) => x));
+        timeframes= json["timeframes"];
+        timeout= json["timeout"] == null ? null : json["timeout"].toDouble();
+        trades= json["trades"] == null ? null : new Map.from(json["trades"]).map((k, v) => new MapEntry<String, dynamic>(k, v));
+        truncate= json["truncate"];
+        twofa= json["twofa"] == null ? null : json["twofa"];
+        unique= json["unique"];
+        urlencode= json["urlencode"];
+        userAgent= json["userAgent"];
+        utf16ToBase64= json["utf16ToBase64"];
+        verbose= json["verbose"] == null ? null : json["verbose"];
+    }
     Map<String, dynamic> toJson() => {
         "aggregate": aggregate,
         "balance": balance == null ? null : new Map.from(balance).map((k, v) => new MapEntry<String, dynamic>(k, v)),
@@ -1361,7 +1360,56 @@ abstract class Exchange {
         "utf16ToBase64": utf16ToBase64,
         "verbose": verbose == null ? null : verbose,
     };
-
+      Market getMarket(String symbol);
+      dynamic describe();
+      dynamic defaults();
+      int nonce();
+      String encodeURIComponent(List args);
+      void checkRequiredCredentials();
+      void initRestRateLimiter();
+      dynamic handleResponse(String url, String method, dynamic headers, dynamic body);
+      void defineRestApi(dynamic api, dynamic methodName, Map<String, dynamic> options);
+      Future fetch(String url, String method, dynamic headers, dynamic body);
+      Future fetch2(dynamic path, String api,String method, Map<String, dynamic> params, dynamic headers, dynamic body);
+      Map<String, Market> setMarkets(List<Market> markets , List<Currency> currencies);
+      Future<Map<String, Market>> loadMarkets(bool reload);
+      Future<Ticker> fetchTicker(String symbol,  Map<String, dynamic> params);
+      Future<Map<String, Ticker>> fetchTickers(List<String> symbols, Map<String, dynamic> params);
+      Future<List<Market>> fetchMarkets();
+      Future<String> fetchOrderStatus(String id, String market);
+      String encode(String str);
+      String decode(String str);
+      Balance account();
+      String commonCurrencyCode(String currency);
+      Market market(String symbol);
+      marketId(String symbol);
+      List<String> marketIds(List<String> symbols);
+      String symbol(String symbol);
+      List<String> extractParams(String str);
+      Future createOrder(String symbol, String type, String side, double amount, double price, Map params);
+      Future<Map<String, dynamic>> fetchBalance(dynamic params);
+      Future<Map<String, double>> fetchTotalBalance(dynamic params);
+      Future<Map<String, double>> fetchUsedBalance(dynamic params);
+      Future<Map<String, double>> fetchFreeBalance(dynamic params);
+      Future<OrderBook> fetchOrderBook(String symbol, double limit, dynamic params);
+      //Future<Map<String, dynamic>> fetchTickers(List<String> symbols);
+      Future<List<Trade>> fetchTrades(String symbol, double since, double limit, Map params);
+      Future<List<List<double>>> fetchOHLCV(String symbol, String timeframe, double since, double limit, Map params);
+      Future<List<Order>> fetchOrders(String symbol, double since, double limit, Map params);
+      Future<List<Order>> fetchOpenOrders(String symbol, double since, double limit, Map params);
+      Future fetchCurrencies(dynamic params);
+      Future<List<Transaction>> fetchTransactions(String currency, double since, double limit, Map params);
+      Future<List<Transaction>> fetchDeposits(String currency, double since, double limit, Map params);
+      Future<List<Transaction>> fetchWithdrawals(String currency, double since, double limit, Map params);
+      Future cancelOrder(String id, String symbol, Map params);
+      Future createDepositAddress(String currency, Map params);
+      Future fetchDepositAddress(String currency, Map params);
+      Future withdraw(String currency, double amount, String address, String tag, Map params);
+      Future request(String path, String api, String method, dynamic params, dynamic headers, dynamic body);
+      String YmdHMS(String timestamp, String infix);
+      String iso8601(String timestamp);
+      double seconds();
+      double microseconds();
     
 }
 
